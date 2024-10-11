@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css</title>
+
+    <style>
+      /* vistas en clase */
+      body {
+        background: #113;
+        color: white;
+        /* pa no quemarme los ojos, team darkmode🌙 */
+      }
+      .padre {
+        background: #222;
+      }
+
+      .contenedor {
+        background: #444;
+      }
+
+      .uno,
+      #dos {
+        color: greenyellow;
+      }
+
+      .padre .tres {
+        color: red;
+      }
+
+      .padre > .tres {
+        color: blue;
+      }
+
+      /* no vistas */
+      :root {
+        --colorGuardado: #3498db;
+      }
+
+      #dos {
+        background-color: var(--colorGuardado);
+      }
+
+      p:empty {
+        width: 100px;
+        height:  100px;
+
+        background: gray;
+      }
+
+      div:not(p) {
+  background-color: green;
+}
+
+span:lang(es) {
+  color: red;
+}
+    </style>
+  </head>
+  <body>
+    <h1>Selectores css</h1>
+
+    <div class="padre">
+      <p class="tres">titulo</p>
+      <div class="contenedotr">
+        <p class="uno">hola</p>
+        <p id="dos">que</p>
+        <p class="tres">tal</p>
+      </div>
+      <!-- vacio -->
+      <p></p>
+      <div>
+        <span>el cubo de arriba es un selector para cosas vacias</span>
+      </div>
+    </div>
+  </body>
+</html>

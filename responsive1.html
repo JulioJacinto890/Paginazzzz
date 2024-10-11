@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GRID 1</title>
+	<meta charset="utf-8">
+	<meta name='viewport' content="width=device-width, initial-scale=1.0">
+	<style>
+		html{
+			font-size: 16px;
+		}
+        *{
+            box-sizing: border-box;
+            margin: 0;
+        }
+        body {
+            width: 90%;
+            /*max-width: 1700px;*/
+            margin: 2em auto;
+            font-family: Arial, Helvetica, sans-serif; 
+        }
+        .container{
+            display: grid;
+            grid-template-areas: "header header header"
+                                 "nav nav nav"
+                                 "aside section section"
+                                 "footer footer footer";
+            grid-gap: 20px;
+
+         }
+
+
+        .container > .hijos {
+            border-radius: 5px;
+            padding: 10px;
+            background-color: rgb(207,232,220);
+            border: 2px solid rgb(79,185,227);
+        }
+
+        header{
+            grid-area: header;
+
+            display:flex;
+            align-items: center;
+
+        }
+        nav{
+            grid-area: nav;
+        }
+        aside{
+            grid-area: aside;
+        }
+        section{
+            grid-area: section;
+            
+            display:grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        footer{
+            grid-area: footer;
+        }
+
+        header h1, header #uno{
+            margin: 3px 3px;
+            padding: 10px;
+         }
+
+        #uno{
+            grid-area: uno;
+        }
+
+        #titulo{
+            grid-area: titulo;
+            text-align: center;
+        }   
+
+        img{
+            width:150px;
+        }
+
+        #flotar{
+            float:right;
+            padding-left: 20px;
+        }
+
+        p{
+            text-align: justify;
+            /*margin: 50px;*/
+            padding: 20px;
+            border:1px red solid;
+            font-size: 1rem;
+
+      }
+
+      h2{
+        border: 1px solid red;
+      }
+
+
+      /*CELULARES*/
+    @media screen and (max-width: 640px) { 
+        .container{
+            grid-template-areas: "header"
+                                 "nav"
+                                 "section"
+                                 "aside"
+                                 "footer";
+            grid-gap: 5px;
+
+         }
+
+        p{
+            color:green;
+            font-size: .8rem;  
+        }
+        #flotar{
+            float:none;
+            padding: 5px;
+            display: block;
+            width: auto;
+        }
+        h1{
+            font-size: 1.4rem;
+         }
+        
+        h2{
+            font-size: 1rem;  
+        }
+ 
+    }
+
+      /*TABLETS*/
+    @media screen and (min-width: 640px) and (max-width: 1280px) {
+
+        .container{
+            grid-template-areas: "header header header"
+                                 "nav nav nav"
+                                 "aside section section"
+                                 "footer footer footer";
+            grid-gap: 20px;
+
+            /*grid-auto-rows: 100px;*/
+            /*grid-auto-rows: minmax(100px, auto);*/
+         }
+
+
+        p{
+            color:blue;
+            font-size: 1rem;  
+        }
+        #flotar{
+            float:none;
+            padding: 5px;
+            display: block;
+            width: auto;
+        }
+        h1{
+            font-size: 1.6rem;
+         }
+        
+        h2{
+            font-size: 1.2rem;  
+        }
+
+
+    }
+
+      /*LAP TOP*/
+    @media screen and (min-width: 1280px) {
+
+    }
+
+
+
+	</style>	
+</head>
+<body>
+    <div class="container"> <!-- id= "wrapper"  -->
+        <header class="hijos">
+            <img src='carro1.jpg' id='uno'>
+            <!--<div id='uno'>IMG</div>-->
+            <h1 id='titulo'>HEADER MAQUETACIÓN GRID POR ÁREA</h1>
+         </header>
+        <nav class="hijos"><h2>BARRA DE MENU</h2></nav>
+        <aside class="hijos"><h2>CAJA A LADO 1</h2></aside>
+        <section class="hijos">
+            <h2>TITULO DE LA SECCIÓN</h2>
+
+            <p><img src='carro1.jpg' id='flotar'>Five Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Five Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <p>Five Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <p>Five Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <p>Five Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>     
+        </section>
+        <footer class="hijos">
+            <address>DATOS DE CONTACTO</address>
+        </footer>
+    </div> <!--FINAL DEL CONTAINER-->
+</body>
+</html>

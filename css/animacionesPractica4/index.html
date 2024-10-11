@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animación CSS - Movimiento</title>
+    <style>
+     
+      .circulo {
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        background-color: #0af;
+        position: absolute;
+        top: 50%;
+
+        animation: muever 5s infinite;
+      }
+
+
+      @keyframes muever {
+        0% {
+          left: 0;
+        }
+        50% {
+          left: calc(100% - 50px);
+          /* es que la bola mide 50px asi que pa que no pase el borde */
+        }
+        100% {
+          left: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="circulo"></div>
+  </body>
+</html>

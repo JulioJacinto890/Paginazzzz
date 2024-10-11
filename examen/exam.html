@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Example Page</title>
+    <style>
+        body {
+            background-color: lightgray;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        #encabezado {
+            text-align: center;
+            width: 80%;
+            margin: 0 auto;
+            border-radius: 15px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            background-color: purple;
+            color: white;
+            padding: 20px;
+        }
+
+        #encabezado img {
+            width: 50px;
+            height: 50px;
+            vertical-align: middle;
+            animation: rotateImage 5s infinite;
+        }
+
+        @keyframes rotateImage {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        #contenido {
+            display: grid;
+            grid-template-areas: 
+                "col1 col2 col3"
+                "footer footer footer";
+            grid-gap: 10px;
+            padding: 10px;
+        }
+
+        #navegacion, #navegacion2, #areaTexto {
+            padding: 10px;
+        }
+
+        #navegacion {
+            grid-area: col1;
+            background-color: lightgreen;
+        }
+
+        #navegacion a {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            background-color: teal;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        #navegacion a:hover {
+            background-color: darkorange;
+            transform: scale(1.1);
+        }
+
+        #navegacion2 {
+            grid-area: col3;
+            background-color: lightgreen;
+        }
+
+        #areaTexto {
+            grid-area: col2;
+            background-color: yellow;
+            padding: 15px;
+            text-align: justify;
+        }
+
+        #areaTexto img {
+            float: left;
+            margin-right: 15px;
+            width: 150px;
+            height: auto;
+            max-width: 100%;
+        }
+
+        #pie {
+            grid-area: footer;
+            background-color: lightblue;
+            text-align: center;
+            padding: 10px;
+        }
+
+        
+        @media (max-width: 768px) {
+            #contenido {
+                grid-template-areas: 
+                    "col1"
+                    "col2"
+                    "col3"
+                    "footer";
+                grid-gap: 20px;
+            }
+
+            #encabezado {
+                width: 100%;
+            }
+
+            #navegacion a {
+                margin: 5px 0;
+                padding: 10px;
+            }
+
+            #areaTexto img {
+                width: 100px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #contenido {
+                grid-template-areas: 
+                    "col2"
+                    "col1"
+                    "col3"
+                    "footer";
+            }
+
+            #areaTexto img {
+                width: 80px;
+                margin-right: 10px;
+            }
+
+            #encabezado h1 {
+                font-size: 18px;
+            }
+
+            #navegacion a {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id='encabezado'>
+        <img src='./uno.jpg' alt="Title Image">
+        <h1>ESTE ES EL TITULO</h1>
+    </div>
+
+    <div id='contenido'>
+        <div id='navegacion'>
+            <a href='#'>Vinculo 1</a>
+            <a href='#'>Vinculo 2</a>
+            <a href='#'>Vinculo 3</a>
+            <a href='#'>Vinculo 4</a>
+        </div>
+
+        <div id='areaTexto'>
+            <img src='./uno.jpg' alt="Text Image">
+            
+
+            Esta es la caja que contiene información. Esta es la caja que contiene información.
+            Esta es la caja que contiene información. Esta es la caja que contiene información.
+            Esta es la caja que contiene información. Esta es la caja que contiene información.
+        </div>
+
+        <div id='navegacion2'>
+           Vinculo 1 <br>
+           Vinculo 2 <br>
+           Vinculo 3 <br>
+        </div>
+
+        <div id='pie'>
+            ESTE ES EL PIE DE PAGINA
+        </div>
+    </div>
+
+</body>
+</html>

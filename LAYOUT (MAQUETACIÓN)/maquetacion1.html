@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 1 - Maquetación Grid</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            grid-template-rows: auto auto 1fr auto;
+            gap: 10px;
+        }
+        header {
+            grid-column: 1 / 3;
+            background-color: #dcdcdc;
+        }
+        nav {
+            grid-column: 1 / 3;
+            background-color: #ffeb3b;
+        }
+        aside {
+            grid-column: 1 / 2;
+            background-color: #90caf9;
+        }
+        section {
+            grid-column: 2 / 3;
+            background-color: #a5d6a7;
+        }
+        footer {
+            grid-column: 1 / 3;
+            background-color: #ffcc80;
+        }
+        header, nav, aside, section, footer {
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid-container">
+        <header>HEADER</header>
+        <nav>NAV</nav>
+        <aside>ASIDE</aside>
+        <section>SECTION</section>
+        <footer>FOOTER</footer>
+    </div>
+
+</body>
+</html>

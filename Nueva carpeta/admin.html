@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador - Helados Mary</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body onload="cargarProductos()">
+    <div class="container">
+        <h1>Panel de Administración</h1>
+        <button onclick="window.location.href='index.html'">Regresar al inicio</button>
+        <div id="login">
+            <label for="usuario">Usuario:</label>
+            <input type="text" id="usuario"><br>
+            <label for="contraseña">Contraseña:</label>
+            <input type="password" id="contraseña"><br>
+            <button onclick="validarUsuario()">Iniciar sesión</button>
+        </div>
+        <div id="formularioAdmin" style="display:none;">
+            <h2>Modificar precios y productos</h2>
+            <button onclick="agregarProducto()">Agregar nuevo producto</button>
+            <ul id="listaProductos">
+                <!-- Los productos se cargarán aquí de forma dinámica -->
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

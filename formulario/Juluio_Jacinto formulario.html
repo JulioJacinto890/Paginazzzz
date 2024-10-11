@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario HTML5 con Validación y CSS3</title>
+    <style>
+        /* Estilo general para el cuerpo */
+        body {
+            font-family: "Lucida Sans", "Lucida Grande", sans-serif; /* Fuente general para la página */
+            background-color: #f4f4f9; /* Fondo suave para el formulario */
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Estilo del contenedor del formulario */
+        .contact_form {
+            max-width: 750px; /* Ancho máximo del formulario */
+            margin: 0 auto; /* Centrado horizontal */
+            padding: 20px;
+            background-color: #fff; /* Fondo blanco */
+            border-radius: 8px; /* Bordes redondeados */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera alrededor */
+        }
+
+        /* Estilo de los encabezados y notificación */
+        .contact_form h2 {
+            margin: 0;
+            display: inline;
+        }
+
+        .required_notification {
+            color: #d45252; /* Color rojo para la notificación de campos obligatorios */
+            margin: 5px 0 0 0;
+            display: inline;
+            float: right; /* Flota a la derecha */
+        }
+
+        /* Estilo de las listas que organizan los campos del formulario */
+        .contact_form ul {
+            list-style-type: none; /* Elimina el estilo de lista predeterminado */
+            margin: 0;
+            padding: 0;
+        }
+
+        .contact_form li {
+            padding: 12px;
+            border-bottom: 1px solid #eee; /* Línea fina debajo de cada campo */
+            position: relative;
+        }
+
+        .contact_form li:first-child, .contact_form li:last-child {
+            border-bottom: 1px solid #777; /* Bordes superiores e inferiores */
+        }
+
+        /* Estilo de las etiquetas y campos de entrada */
+        .contact_form label {
+            width: 150px;
+            display: inline-block;
+            float: left;
+            padding: 3px;
+        }
+
+        .contact_form input, .contact_form textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra interior */
+        }
+
+        /* Estilo de los campos cuando se enfocan */
+        .contact_form input:focus, .contact_form textarea:focus {
+            border-color: #007BFF; /* Color azul en el borde cuando está en foco */
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+            padding-right: 70px; /* Expansión cuando se enfoca */
+            transition: padding .25s; /* Transición suave del padding */
+        }
+
+        /* Estilo del botón de envío */
+        .contact_form button {
+            background-color: #68b12f;
+            border: 1px solid #509111;
+            color: white;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 3px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        button.submit:hover {
+            opacity: 0.85;
+            cursor: pointer;
+        }
+
+        button.submit:active {
+            border: 1px solid #20911e;
+            box-shadow: inset 0 0 10px #356b0b;
+        }
+
+        /* Estilo de campos requeridos usando :required y validación HTML5 */
+        input:required, textarea:required {
+            background: #fff url('images/red_asterisk.png') no-repeat 98% center; /* Asterisco rojo para campos requeridos */
+        }
+
+        /* Campos válidos */
+        input:required:valid, textarea:required:valid {
+            background: #fff url('images/valid.png') no-repeat 98% center;
+            border-color: #28921f; /* Verde para campos válidos */
+            box-shadow: 0 0 5px #5cd053;
+        }
+
+        /* Campos inválidos */
+        input:focus:invalid, textarea:focus:invalid {
+            background: #fff url('images/invalid.png') no-repeat 98% center;
+            border-color: #b03535;
+            box-shadow: 0 0 5px #d45252;
+        }
+
+        /* Estilo de las instrucciones (hints) */
+        .form_hint {
+            background: #d45252;
+            color: white;
+            padding: 1px 6px;
+            border-radius: 3px;
+            position: absolute;
+            left: 150px; /* Posición ajustada al campo */
+            display: none; /* Solo aparece cuando se enfoca */
+        }
+
+        .form_hint::before {
+            content: "\25C0"; /* Triángulo de advertencia */
+            color: #d45252;
+            position: absolute;
+            left: -6px;
+        }
+
+        input:focus + .form_hint {
+            display: inline; /* Muestra el hint cuando el campo está en foco */
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="contact_form">
+        <h2>Formulario de Contacto</h2>
+        <span class="required_notification">* Campos Requeridos</span>
+        <form action="" method="post" name="contact_form">
+            <ul>
+                <li>
+                    <label for="name">Nombre:</label>
+                    <input type="text" name="name" placeholder="John Doe" required />
+                </li>
+                <li>
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" name="email" placeholder="john_doe@example.com" required />
+                    <span class="form_hint">Formato correcto: "name@algo.com"</span>
+                </li>
+                <li>
+                    <label for="website">Sitio Web:</label>
+                    <input type="url" name="website" placeholder="http://tusitio.com" required pattern="https?://.+" />
+                    <span class="form_hint">Formato correcto: "https://tusitio.com"</span>
+                </li>
+                <li>
+                    <label for="message">Mensaje:</label>
+                    <textarea name="message" cols="40" rows="6" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                </li>
+                <li>
+                    <button class="submit" type="submit">Enviar Formulario</button>
+                </li>
+            </ul>
+        </form>
+    </div>
+
+</body>
+</html>
+
+

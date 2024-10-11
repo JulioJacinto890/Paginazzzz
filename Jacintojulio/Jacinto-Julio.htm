@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica de Selectores</title>
+    <style>
+        /* Selectores que no se vieron en clase (no seudo clases ni seudo elementos) */
+        
+        /* Selector de hijo directo */
+        div > p {
+            color: blue;
+        }
+        
+        /* Selector de atributo */
+        a[href] {
+            text-decoration: none;
+            color: green;
+        }
+
+        /* Selector de atributo con valor específico */
+        input[type="text"] {
+            border: 2px solid red;
+        }
+
+        /* Selector de grupo */
+        h1, h2, h3 {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Selector universal */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Selectores que no se vieron en clase (seudo clases y seudo elementos) */
+        
+        /* Pseudo clase :nth-child() */
+        li:nth-child(odd) {
+            background-color: #f0f0f0;
+        }
+
+       
+        p:not(.especial) {
+            font-style: italic;
+        }
+
+        
+        button:hover {
+            background-color: rgb(0, 255, 179);
+        }
+
+        
+        h1::before {
+            content: "Título: ";
+            color: rgb(47, 0, 255);
+        }
+
+        
+        p::after {
+            content: " [Leído]";
+            color: rgb(55, 198, 23);
+        }
+    </style>
+</head>
+<body>
+    <h1> página de prueba con selectores</h1>
+    <h2>Subtítulo de la página</h2>
+
+    <div>
+        <p>Este es un párrafo dentro de un div.</p>
+        <p class="especial">Este es otro párrafo dentro de un div con clase especial.</p>
+    </div>
+
+    <ul>
+        <li>Elemento a 1</li>
+        <li>Elemento a 2</li>
+        <li>Elemento a 3</li>
+    </ul>
+
+    <a href="http://www.youtube.com/@julio790game6">Enlace a ejemplo.com</a>
+
+    <form>
+        <input type="text" placeholder="Escribe tu nombre">
+        <input type="submit" value="Enviar">
+    </form>
+
+    <button>Haz clic en mí</button>
+</body>
+</html>
